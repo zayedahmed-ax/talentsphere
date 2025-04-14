@@ -1,0 +1,30 @@
+name: Auto Commit Changes
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  auto-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+
+      - name: Auto Commit
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: 'Auto commit: Update website content'
+          branch: main
+          file_pattern: '*.html *.css *.js'
+          commit_user_name: 'GitHub Action'
+          commit_user_email: 'action@github.com' 
