@@ -1,0 +1,33 @@
+{
+  "name": "talentsphere",
+  "version": "1.0.0",
+  "description": "Talent Sphere HR Consultancy Website",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve .",
+    "prebuild": "rm -rf build",
+    "build": "mkdir -p build && cp -r index.html css js images *.png *.ico *.webmanifest .nojekyll build/",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zayedahmed-ax/talentsphere.git"
+  },
+  "keywords": [
+    "hr",
+    "consultancy",
+    "website",
+    "responsive"
+  ],
+  "author": "Talent Sphere",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zayedahmed-ax/talentsphere/issues"
+  },
+  "homepage": "https://zayedahmed-ax.github.io/talentsphere",
+  "devDependencies": {
+    "serve": "^14.2.0",
+    "gh-pages": "^6.1.1"
+  }
+} 
