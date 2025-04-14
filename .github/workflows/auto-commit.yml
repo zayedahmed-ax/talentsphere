@@ -24,7 +24,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: 'Auto commit: Update website content'
-          branch: main
           file_pattern: '*.html *.css *.js'
           commit_user_name: 'GitHub Action'
-          commit_user_email: 'action@github.com' 
+          commit_user_email: 'action@github.com'
+          commit_author: 'GitHub Action <action@github.com>' 
